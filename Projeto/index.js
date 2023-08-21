@@ -1,4 +1,5 @@
 const express = require('express');
+const { clearCookie } = require('express/lib/response');
 const app = express();
 const Cliente = require("./Cliente");
 app.set("view engine", "ejs");
@@ -18,7 +19,28 @@ app.set("view engine", "ejs");
 
     app.get("/clientes", function(req, res){
          res.render("clientes", {Vclientes});
-         })
+    });
+
+    app.get("/cliente/:id?", function(req, res){
+        const id = req.params.id;
+        if (id != undefined){
+            let encontrou = false;
+            for (const c of Vclientes) {
+            if(id == c.id){
+                encontrou = true;
+                res.render("cliente", {c})
+                break;
+            }
+
+        }
+        if (encontrou == false){
+            res.send("Cliente não encontrado!")
+        }
+        }else{
+            res.render("clientes", {Vclientes});
+        }
+        
+   });
 
 //Porta do servidor
 app.listen("2005", function(){
