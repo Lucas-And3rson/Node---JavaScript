@@ -2,7 +2,9 @@ const express = require('express');
 const { clearCookie } = require('express/lib/response');
 const app = express();
 const Cliente = require("./Cliente");
+
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
 
   const cliente1 = new Cliente(1, "Lucas", 12);
   const cliente2 = new Cliente(2, "Sacul", 13);
@@ -32,9 +34,6 @@ app.set("view engine", "ejs");
                 break;
             }
 
-        }
-        if (encontrou == false){
-            res.send("Cliente não encontrado!")
         }
         }else{
             res.render("clientes", {Vclientes});
