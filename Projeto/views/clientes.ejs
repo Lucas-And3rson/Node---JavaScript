@@ -9,7 +9,7 @@
 <body>  
         <% for (const c of Vclientes) {%>
             <div>
-                <b>id:</b> <%=c.id%>
+              <a href="/cliente/<%=c.id%>"><b>id:</b></a> <%=c.id%>
             </div><br>
             <div>
                 <b>Nome:</b><%=c.nome%>

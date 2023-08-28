@@ -6,9 +6,9 @@ const Cliente = require("./Cliente");
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
-  const cliente1 = new Cliente(1, "Lucas", 12);
-  const cliente2 = new Cliente(2, "Sacul", 13);
-  const cliente3 = new Cliente(3, "And", 14);
+  const cliente1 = new Cliente(1, "Lucas", 5);
+  const cliente2 = new Cliente(2, "Ucas", 4);
+  const cliente3 = new Cliente(3, "Cas", 3);
   const Vclientes = [cliente1,cliente2,cliente3];
 
     app.get("/", function(req, res){
@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
     app.get("/clientes", function(req, res){
          res.render("clientes", {Vclientes});
     });
-
+   
     app.get("/cliente/:id?", function(req, res){
         const id = req.params.id;
         if (id != undefined){
@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
             for (const c of Vclientes) {
             if(id == c.id){
                 encontrou = true;
-                res.render("cliente", {c})
+                res.render("cliente", {c});
                 break;
             }
 
@@ -39,6 +39,17 @@ app.use(express.urlencoded({ extended: true }));
             res.render("clientes", {Vclientes});
         }
         
+   });
+    app.get("/clientes/cadastrar", function(req, res){
+            res.render("cadastrar");
+    });
+   //estudando POST
+
+   app.post("/clientes", function(req, res){
+       const dados = req.body;
+       const ClienteNovo = new Cliente(dados.id, dados.nome, dados.idade);
+       Vclientes.push(ClienteNovo);
+       res.redirect("/clientes");
    });
 
 //Porta do servidor
