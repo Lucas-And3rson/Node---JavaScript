@@ -1,0 +1,111 @@
+h3 {
+    color: blue;
+}
+
+.cabecalho{
+    background-color: burlywood;
+
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+li{
+    list-style-type: none;
+    padding: 10px;
+}
+a{
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    height: 250px;
+    width: 300px;
+    margin-top: 50px;
+
+    background-color: burlywood;
+    border: solid 1px #000;
+    border-radius: 5px;
+}
+.formulario > form > input{
+    border: none;
+    border-radius: 5px;
+}
+.btn-cadastrar{
+    background-color: rgb(33, 82, 247);
+    color: #f1f1f1;
+
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+label{
+    margin-right: 10px;
+}
+table{
+    display: flex;
+    margin: auto;
+    width: 300px;
+
+    background-color: burlywood;
+    border: solid 1px #000;
+    border-radius: 5px;
+
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-menu{
+    display: none;
+}
+.menu{
+    display: none;
+    width: 200px;
+    position: fixed;
+    opacity: 95%;
+
+    border: solid 1px black;
+    border-radius: 0 0 5px 0;
+    background-color: rgb(238, 220, 197);
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+@media (max-width: 400px){
+    .cabecalho-menu{
+        display: flex;
+        margin: auto;
+        align-items: center;
+        width: 100%;
+        min-width: 300px;
+
+        background-color: burlywood;
+    }
+    #btn-menu{
+        display: block;
+        padding: 10px;
+        border-right: solid 1px black;
+    }
+    .btn-close{
+        display: flex;
+        align-items: flex-end;
+    }
+    .cabecalho{
+        display: none;
+    }
+    li{
+        border-bottom: solid 1px #000;
+    }
+}
