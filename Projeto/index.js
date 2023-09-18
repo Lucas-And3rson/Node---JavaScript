@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 
 
-// const mongoose = require("mongoose");
-// mongoose.connect("mongodb+srv://lucas:TV8wt2OrhQ4KhfIX@cluster0.kkoixjy.mongodb.net/?retryWrites=true&w=majority");
-// const ClienteModel = require("./models/ClienteModel")
+const mongoose = require("mongoose");
+mongoose.connect("mongodb+srv://lucas:TV8wt2OrhQ4KhfIX@cluster0.kkoixjy.mongodb.net/?retryWrites=true&w=majority");
+const ClienteModel = require("./models/ClienteModel")
 
 // Sem Internet
 
