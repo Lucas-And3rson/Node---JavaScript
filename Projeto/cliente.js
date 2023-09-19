@@ -6,4 +6,4 @@ class Cliente{
     }
 }
 
-module.exports = Cliente
+module.exports = Cliente;

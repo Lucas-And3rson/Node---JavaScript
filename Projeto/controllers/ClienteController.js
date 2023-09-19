@@ -1,36 +1,45 @@
 const ClienteModel = require("../models/ClienteModel");
-const Cliente = require("../Cliente");
-const VClientes = [];
-
 
 class ClienteController{
-    static async cadastrar(req, res){
-    // const NovoCliente = req.body;
-    // console.log(NovoCliente)
-    // VClientes.push(new Cliente(NovoCliente.id, NovoCliente.nome, NovoCliente.idade));
-    // res.redirect("./clientes?s=1");
-    const novoCliente = new ClienteModel ({
-         id: req.body.id,
-         nome: req.body.nome,
-         idade: req.body.idade
-      })
-      await novoCliente.save();
-     res.redirect("/clientes");
-    }
-
-    static cadastrarRender(req, res){
-        res.ren("cliente/cadastrar");
-    }
     static async relatorio(req, res){
+        const id = req.params.id;
         const salvo = req.query.s;
-        const VClientes = await ClienteModal.find();
-        res.render("cliente/relatorio", {VClientes, salvo});
+        const clientes = await ClienteModel.find();
+        if(id == undefined){
+            res.render("cliente/relatorio", {clientes, salvo});
+        }
 }
     static async detalhar(req, res){
         const id = req.params.id;
-        const cliente = await ClienteModel.findOne({id:id});
-        res.render("cliente/detalhar", {c});
+        let encontrou = false;
+        const cliente = await ClienteModel.find();
+        for(const c of cliente){
+            if(id == c.id){
+                encontrou = true;
+                res.render("Cliente/detalhar", {c});
+                break
+            }
+        }
+        if(encontrou == false){
+            res.send("Cliente não encontrado");
+        }
     }
+    static cadastrarRender(req, res){
+        res.render("cliente/cadastrar");
+    }
+    static async cadastrar(req, res){
+        // const NovoCliente = req.body;
+        // console.log(NovoCliente)
+        // VClientes.push(new Cliente(NovoCliente.id, NovoCliente.nome, NovoCliente.idade));
+        // res.redirect("./clientes?s=1");
+        const novoCliente = new ClienteModel ({
+             id: req.body.id,
+             nome: req.body.nome,
+             idade: req.body.idade
+          })
+          await novoCliente.save();
+         res.redirect("/clientes");
+        }
 }
 
 module.exports = ClienteController;
