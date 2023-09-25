@@ -1,13 +1,12 @@
-h3 {
-    color: blue;
-}
-
 .cabecalho{
     background-color: burlywood;
 
     display: flex;
     flex-direction: row;
     margin: auto;
+}
+.cabecalho ol li{
+    left:0;
 }
 
 .cabecalho li  ol{
@@ -20,7 +19,8 @@ h3 {
 .cabecalho li:hover ol, .cabecalho li.over ol{display:block;}
 
 .cabecalho li ol li{
-    border-bottom: solid 1px #000 ;
+    border-left: solid 1px #000;
+    border-bottom: solid 1px #000;
     display:block;
     width:125px;
     }
@@ -40,13 +40,22 @@ a:hover{
     text-decoration: underline;
 }
 
+.activated{
+    color: white;
+}
+
+.formulario h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .formulario{
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
-
-    height: 250px;
+    padding: 10px;
     width: 300px;
     margin-top: 50px;
 
@@ -62,8 +71,13 @@ a:hover{
     background-color: rgb(33, 82, 247);
     color: #f1f1f1;
 
+    padding: 5px;
     border-radius: 5px;
     margin-top: 10px;
+}
+
+.btn-cadastrar:hover{
+    background-color: rgb(53, 98, 247);
 }
 
 label{
@@ -72,6 +86,7 @@ label{
 table{
     display: flex;
     margin: auto;
+    padding: 5px;
     width: 300px;
 
     background-color: burlywood;
@@ -83,6 +98,19 @@ table{
     align-items: center;
 }
 
+table th{
+    padding: 5px;
+}
+
+table tr{
+    padding: 5px;
+}
+
+table td{
+    padding: 5px;
+    border: solid 1px #000;
+    border-radius: 5px;
+}
 footer{
     font-weight: bold;
     background-color: burlywood;
@@ -91,6 +119,7 @@ footer{
     position: absolute;
     bottom: 0;
     width: 100%;
+    min-width: 300px;
     height: 50px;    
     text-align: center;
     line-height: 50px;
@@ -104,7 +133,7 @@ footer{
     display: none;
     width: 200px;
     position: fixed;
-    opacity: 95%;
+    opacity: 97%;
 
     border: solid 1px black;
     border-radius: 0 0 5px 0;
@@ -113,6 +142,19 @@ footer{
     padding: 0;
     color: #fff;
 }
+.menu li  ol{
+    position:absolute;
+    left:0;
+    background-color: rgb(238, 220, 197);
+    display:none;
+    }
+
+.menu li:hover ol, .menu li.over ol{display:block; position:relative;}
+
+.menu li ol li{
+    display:block;
+    width:125px;
+    }
 
 @media (max-width: 400px){
     .cabecalho-menu{
@@ -137,6 +179,7 @@ footer{
         display: none;
     }
     li{
+        border-left: solid 1px #000;
         border-bottom: solid 1px #000;
     }
 }

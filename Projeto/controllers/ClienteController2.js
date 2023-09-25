@@ -3,7 +3,7 @@ const Cliente = require("../Cliente");
 const VClientes = [];
 
 
-class ClienteController2{
+class ClienteController{
     static async cadastrar(req, res){
         // const NovoCliente = req.body;
         // console.log(NovoCliente)
@@ -22,6 +22,7 @@ class ClienteController2{
     }
     static relatorio(req, res){
         res.render("cliente/relatorio", {VClientes});
+
 }
     static detalhar(req, res){
         const id = req.params.id;
@@ -35,9 +36,9 @@ class ClienteController2{
                 }
             }
         }else{
-            res.render("cliente/relatorio");
+            res.render("../cliente/relatorio");
         }
     }
 }
 
-module.exports = ClienteController2;
+module.exports = ClienteController;
