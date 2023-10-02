@@ -13,11 +13,11 @@
      <form action="/clientes" method="POST">
           <h3>CADASTRE-SE</h3>
         <label for="id">ID</label><br>
-        <input type="number" id="id" name="id" required><br>
+        <input type="number" id="id" name="id" min="1" required><br>
         <label for="nome">Nome</label><br>
         <input type="text" id="nome" name="nome" required><br>
         <label for="idade">Idade</label><br>
-        <input type="number" id="idade" name="idade" required><br>
+        <input type="number" id="idade" name="idade" min="1" required><br>
         <input type="submit" class="btn-cadastrar" value="Cadastrar">
     </form>
     </div>

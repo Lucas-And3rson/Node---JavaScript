@@ -86,16 +86,14 @@ label{
 table{
     display: flex;
     margin: auto;
-    padding: 5px;
-    width: 300px;
-
-    background-color: rgb(120, 180, 214);
-    border: solid 1px #f1f1f1;
+    padding: 4px;
     border-radius: 5px;
-
     margin-top: 50px;
+    width: 300px;
     justify-content: center;
     align-items: center;
+
+    background-color: rgb(120, 180, 214);
 }
 
 table th{
@@ -110,9 +108,9 @@ table tr{
 
 table td{
     padding: 5px;
-    border: solid 1px #f1f1f1;
     border-radius: 5px;
     margin-top: 5px;
+    margin-left: 5px;
 }
 .acoes{
     display: flex;

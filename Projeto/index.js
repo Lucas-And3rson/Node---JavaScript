@@ -20,7 +20,7 @@ app.use(ClienteRoutes);
     app.get("/", function(req, res){
         res.render("index"); 
     });
-
+    //caso não encontre a página
     app.use(function(res, res) {
         res.status(404).render("erro/404");
     });
