@@ -1,5 +1,5 @@
 .cabecalho{
-    background-color: burlywood;
+    background-color: rgb(120, 180, 214);
 
     display: flex;
     flex-direction: row;
@@ -12,7 +12,7 @@
 .cabecalho li  ol{
     position:absolute;
     left:0;
-    background-color: burlywood;
+    background-color: rgb(120, 180, 214);
     display:none;
     }
 
@@ -59,7 +59,7 @@ a:hover{
     width: 300px;
     margin-top: 50px;
 
-    background-color: burlywood;
+    background-color: rgb(120, 180, 214);
     border: solid 1px #000;
     border-radius: 5px;
 }
@@ -89,8 +89,8 @@ table{
     padding: 5px;
     width: 300px;
 
-    background-color: burlywood;
-    border: solid 1px #000;
+    background-color: rgb(120, 180, 214);
+    border: solid 1px #f1f1f1;
     border-radius: 5px;
 
     margin-top: 50px;
@@ -100,6 +100,8 @@ table{
 
 table th{
     padding: 5px;
+    background-color: rgb(38, 117, 190);
+    border: solid 1px #f1f1f1;
 }
 
 table tr{
@@ -108,12 +110,33 @@ table tr{
 
 table td{
     padding: 5px;
-    border: solid 1px #000;
+    border: solid 1px #f1f1f1;
     border-radius: 5px;
+    margin-top: 5px;
 }
+.acoes{
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+}
+.icon-delete{
+    padding: 10px;
+    border-radius: 5px;
+
+    background-color: rgb(246, 58, 58);
+}
+
+.icon-detalhar{
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+
+    background-color: rgb(58, 155, 246);
+}
+
 footer{
     font-weight: bold;
-    background-color: burlywood;
+    background-color: rgb(120, 180, 214);
     color: #000;
 
     position: absolute;
@@ -137,7 +160,7 @@ footer{
 
     border: solid 1px black;
     border-radius: 0 0 5px 0;
-    background-color: rgb(238, 220, 197);
+    background-color: rgb(120, 180, 214);
     margin: 0;
     padding: 0;
     color: #fff;
@@ -145,7 +168,7 @@ footer{
 .menu li  ol{
     position:absolute;
     left:0;
-    background-color: rgb(238, 220, 197);
+    background-color: rgb(120, 180, 214);
     display:none;
     }
 
@@ -164,7 +187,7 @@ footer{
         width: 100%;
         min-width: 300px;
 
-        background-color: burlywood;
+        background-color: rgb(120, 180, 214);
     }
     #btn-menu{
         display: block;
@@ -182,4 +205,37 @@ footer{
         border-left: solid 1px #000;
         border-bottom: solid 1px #000;
     }
+}
+.error{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+}
+.content-erro{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    
+    border-radius: 10px;
+    box-shadow: 20px 20px 15px -3px rgba(0,0,0, 0.5),0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.errorRight{
+    padding: 10px;
+
+}
+
+.errorLeft{
+    padding: 10px;
+}
+
+.cadastrado-alert{
+    background-color: aquamarine;
+}
+
+.deletado-alert{
+    background-color: lightcoral;
 }

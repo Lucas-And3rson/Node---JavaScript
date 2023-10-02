@@ -5,13 +5,13 @@ const VClientes = [];
 
 class ClienteController{
     static async relatorio(req, res){
-        const salvo = req.query.s;
+        const status = req.query.s;
         const VClientes = await ClienteModel.find();
-        res.render("cliente/relatorio", {VClientes, salvo});
+        res.render("cliente/relatorio", {VClientes, status});
 }
     static async detalhar(req, res){
         const id = req.params.id;
-        const cliente = await ClienteModel.findOne({id:id});
+        const c = await ClienteModel.findOne({id:id});
         res.render("cliente/detalhar", {c});
 }
     static cadastrarRender(req, res){
@@ -28,8 +28,13 @@ class ClienteController{
          idade: req.body.idade
       })
       await novoCliente.save();
-     res.redirect("/clientes");
+     res.redirect("/clientes?s=1");
     }
+    static async deletar(req, res){
+            const id = req.params.id;
+            await ClienteModel.findOneAndDelete({id:id});
+            res.redirect("/clientes?s=2");
+        }
 }
 
 module.exports = ClienteController;

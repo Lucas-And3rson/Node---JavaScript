@@ -8,22 +8,48 @@
 </head>
 <body>  
     <%- include("../partials/cabeçalho.ejs") %>
+    <% if(status == 1){ %>
+        <div class="cadastrado-alert">
+            Cadastro feito com sucesso
+        </div>
+    <%}
+    if(status == 2){ %>
+        <div class="deletado-alert">
+            Cliente removido com sucesso
+        </div>
+    <% } %>
     <table>
         <th>ID</th>
         <th>Nome</th>
         <th>Idade</th>
-        <th>Detalhar</th>
+        <th>Ações</th>
         <% for (const c of VClientes) {%>
             <tr>
                 <td><%=c.id%></td>
                 <td><%=c.nome%></td>
                 <td><%=c.idade%></td>
-                <td><a href="/cliente/<%=c.id%>">Detalhar</a></td>
+                <td class="acoes">
+                    <div class="icon-detalhar" >
+                        <a href="/cliente/<%=c.id%>">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                        </a>
+                    </div>
+                    <div class="icon-delete" onclick="return confirm('Você tem certeza que deseja deletar esse Cliente?')">
+                        <a href="/cliente/deletar/<%=c.id%>">
+                            <span class="material-symbols-outlined">
+                            delete
+                            </span>
+                        </a>
+                    </div>
+                </td>
             </tr>
         <% } %>
     </table>
         <%- include("../partials/rodape.ejs") %>
 </body>
+
 </html>
 
          

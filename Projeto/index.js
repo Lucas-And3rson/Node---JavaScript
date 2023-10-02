@@ -21,6 +21,10 @@ app.use(ClienteRoutes);
         res.render("index"); 
     });
 
+    app.use(function(res, res) {
+        res.status(404).render("erro/404");
+    });
+
    //com internet
 //     app.get("/cliente/:id?", async function(req, res){
 //         const id = req.params.id;
