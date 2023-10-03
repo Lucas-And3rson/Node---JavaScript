@@ -123,12 +123,12 @@ table td{
     margin-top: 5px;
     margin-left: 5px;
 }
-.card__left > .acoes{
+.card__right > .acoes{
     display: flex;
     flex-direction: row;
     position: absolute;
-    left: 0;
-    top: 0;
+    right: 0;
+    bottom: 0;
 }
 .icon-delete{
     display: flex;
@@ -144,7 +144,11 @@ table td{
 
 .icon-delete:hover{
     cursor:pointer;
-    background-color: rgb(216, 48, 48);
+    background-color: rgb(199, 58, 58);
+
+    .material-symbols-outlined{
+        color: #e6d0d0;
+    }
 }
 
 .icon-detalhar{
@@ -159,7 +163,11 @@ table td{
 
 .icon-detalhar:hover{
     cursor: pointer;
-    background-color: rgb(58, 124, 246);
+    background-color: rgb(52, 107, 209);
+
+    .material-symbols-outlined{
+        color: #d0d8e6;
+    }
 }
 
 footer{
@@ -237,10 +245,26 @@ footer{
 }
 
 .cadastrado-alert{
+    display: flex;
+    margin: auto;
+    width: 220px;
+    left: 50%;
+    justify-content: center;
+
+    margin-bottom: 40px;
+    border-radius: 10px;
     background-color: aquamarine;
 }
 
 .deletado-alert{
+    display: flex;
+    margin: auto;
+    width: 230px;
+    left: 50%;
+    justify-content: center;
+
+    margin-bottom: 40px;
+    border-radius: 10px;
     background-color: lightcoral;
 }
 
@@ -263,21 +287,26 @@ footer{
     justify-content: space-between;
     margin-bottom: 40px;
 
-    transition: flex-direction .5s;
-    transition-timing-function: ease;
+    /* transition: flex-direction .5s;
+    transition-timing-function: ease; */
+    transition: transform .8s;
 }
-.card__left {
+
+.card:hover{
+    transform: scale(1.1);
+}
+.card__right {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 10px;
 }
 
-.card__left > .informacoes > span {
+.card__right > .informacoes > span {
     font-weight: bold;
 }
 
-.card__left > .informacoes > a {
+.card__right > .informacoes > a {
     margin-top: 15px;
     font-size: 25px;
     color: black;
@@ -285,16 +314,16 @@ footer{
     font-weight: bold;
 }
 
-.card__left > .informacoes > p {
+.card__right > .informacoes > p {
     color: rgb(70, 70, 70);
 }
 
-.card__right {
+.card__left {
     display: flex;
     justify-content: center;
 }
 
-.card__right > .id-absolute{
+.card__left > .id-absolute{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -302,9 +331,9 @@ footer{
 
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     margin-top: 5px;
-    margin-right: 5px;
+    margin-left: 5px;
 
     padding: 5px;
     opacity: 80%;
@@ -312,11 +341,11 @@ footer{
     border-radius: 50%;
 }
 
-.card__right > .id-absolute > span{
+.card__left > .id-absolute > span{
     font-weight: bold;
 }
 
-.card__right > img {
+.card__left > img {
     width: 200px;
     height: 200px;
     padding: 5px
@@ -325,7 +354,7 @@ footer{
 @media (max-width: 400px){
     .cabecalho-menu{
         display: flex;
-        margin: auto;
+        margin-bottom: 40px;
         align-items: center;
         width: 100%;
         min-width: 300px;
@@ -352,28 +381,14 @@ footer{
 .informacoes{
     display: flex;
     flex-direction: column;
+    width: 155px;
 }
 @media (max-width: 510px){
     .card{
         flex-direction: column;
     }
-    .card__left > .acoes{
-        left: auto;
-        right: 0;
-    }
     .informacoes{
         display: flex;
         flex-direction: column;
-        max-width: 155px;
-    }
-    .card__right > .id-absolute{
-        top: auto;
-        right: auto;
-        left: 0;
-        bottom: 0;
-        margin-top: 0;
-        margin-right: 0;
-        margin-bottom: 5px;
-        margin-left: 5px;
     }
 }

@@ -10,18 +10,24 @@
     <%- include("../partials/cabeçalho.ejs") %>
     <% if(status == 1){ %>
         <div class="cadastrado-alert">
-            Cadastro feito com sucesso
+            Cadastro feito com sucesso!
         </div>
     <%}
     if(status == 2){ %>
         <div class="deletado-alert">
-            Cliente removido com sucesso
+            Cliente removido com sucesso!
         </div>
     <% } %>
     <div class="content-listar">
         <% for (const c of VClientes) {%>
         <div class="card">
         <div class="card__left">
+            <div class="id-absolute">
+               <span><%=c.id%></span>     
+            </div>
+            <img src="img/person.jpg" alt="default">
+        </div> 
+        <div class="card__right">
             <div class="informacoes">
                 <span><%=c.nome%></span>
                 <p><%=c.idade%> anos</p>
@@ -42,12 +48,6 @@
                     </a>
                 </div>  
             </div>
-        </div> 
-        <div class="card__right">
-            <div class="id-absolute">
-               <span><%=c.id%></span>     
-            </div>
-            <img src="img/person.jpg" alt="default">
         </div>  
     </div>
     <% } %>
