@@ -8,17 +8,32 @@
 </head>
 <body>
     <%- include("../partials/cabeçalho.ejs") %>
-        <div>
-            Este é você:
-        </div><br>
-        <div>
-            <b>id:</b> <%=c.id%><br>
-        </div>
-        <div>
-            <b>Nome:</b><%=c.nome%><br>
-        </div>
-        <div>
-            <b>Idade: </b> <%=c.idade%><br> <br>
+        <div class="content-listar">
+            <div class="card">
+            <div class="card__left">
+                <span>ID: <%=c.id%></span>
+                <span><%=c.nome%></span>
+                <p><%=c.idade%> anos</p>
+                <div class="acoes">
+                    <div class="icon-detalhar" >
+                        <a href="/cliente/<%=c.id%>">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                        </a>
+                    </div>
+                    <div class="icon-delete" onclick="return confirm('Você tem certeza que deseja deletar esse Cliente?')">
+                        <a href="/cliente/deletar/<%=c.id%>">
+                            <span class="material-symbols-outlined">
+                            delete
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div> 
+            <div class="card__right">
+                <img src="img/person.jpg" alt="default">
+            </div>  
         </div>
         <%- include("../partials/rodape.ejs") %>
 </body>

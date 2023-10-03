@@ -22,10 +22,11 @@
         <% for (const c of VClientes) {%>
         <div class="card">
         <div class="card__left">
-            <span>ID: <%=c.id%></span>
-            <span><%=c.nome%></span>
-            <p>Idade: <%=c.idade%></p>
-            <p class="acoes">
+            <div class="informacoes">
+                <span><%=c.nome%></span>
+                <p><%=c.idade%> anos</p>
+            </div>
+            <div class="acoes">
                 <div class="icon-detalhar" >
                     <a href="/cliente/<%=c.id%>">
                         <span class="material-symbols-outlined">
@@ -39,16 +40,19 @@
                         delete
                         </span>
                     </a>
-                </div>
-            </p>
+                </div>  
+            </div>
         </div> 
         <div class="card__right">
+            <div class="id-absolute">
+               <span><%=c.id%></span>     
+            </div>
             <img src="img/person.jpg" alt="default">
         </div>  
     </div>
     <% } %>
+    <%- include("../partials/rodape.ejs") %>
 </body>
-<%- include("../partials/rodape.ejs") %>
 </html>
 
          
