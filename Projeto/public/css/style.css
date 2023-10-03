@@ -1,9 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .cabecalho{
     background-color: rgb(120, 180, 214);
 
     display: flex;
     flex-direction: row;
     margin: auto;
+    margin-bottom: 40px;
 }
 .cabecalho ol li{
     left:0;
@@ -114,22 +120,36 @@ table td{
 }
 .acoes{
     display: flex;
-    justify-content: center;
-    margin-left: 10px;
 }
 .icon-delete{
+    display: flex;
+    justify-content: center;
+    width: 50px;
     padding: 10px;
     border-radius: 5px;
+
 
     background-color: rgb(246, 58, 58);
 }
 
+.icon-delete:hover{
+    cursor:pointer;
+    background-color: rgb(216, 48, 48);
+}
+
 .icon-detalhar{
+    display: flex;
+    justify-content: center;
+    width: 50px;
     padding: 10px;
     border-radius: 5px;
-    margin-right: 10px;
 
     background-color: rgb(58, 155, 246);
+}
+
+.icon-detalhar:hover{
+    cursor: pointer;
+    background-color: rgb(58, 124, 246);
 }
 
 footer{
@@ -137,15 +157,15 @@ footer{
     background-color: rgb(120, 180, 214);
     color: #000;
 
-    position: absolute;
-    bottom: 0;
+    scroll-margin-bottom: 0;
+
     width: 100%;
     min-width: 300px;
     height: 50px;    
     text-align: center;
     line-height: 50px;
 }
-
+    
 #btn-menu{
     display: none;
 }
@@ -203,6 +223,11 @@ footer{
         border-left: solid 1px #000;
         border-bottom: solid 1px #000;
     }
+
+    .card{
+        clear: both;
+        flex-direction: column;
+    }
 }
 .error{
     display: flex;
@@ -236,4 +261,55 @@ footer{
 
 .deletado-alert{
     background-color: lightcoral;
+}
+
+.content-listar{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card{
+    width: 70%;
+    border-radius: 5px;
+    box-shadow: 20px 20px 40px 15px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: row;
+    min-width: 300px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.card__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.card__left > span {
+    font-weight: 400;
+}
+
+.card__left > a {
+    margin-top: 15px;
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card__left > p {
+    color: rgb(70, 70, 70);
+}
+
+.card__right {
+    display: flex;
+    justify-content: center;
+}
+
+.card__right > img {
+    width: 200px;
+    height: 200px;
+    padding: 5px
 }
