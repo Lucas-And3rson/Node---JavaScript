@@ -1,11 +1,17 @@
-let open = document.querySelector('#btn-menu');
-let close = document.querySelector('.btn-close');
-let menu = document.querySelector('.menu');
+const btnMobile = document.getElementById('btn-mobile');
 
-open.addEventListener('click', function() {
-  menu.style.display = 'block';
-});
+function toggleMenu(event) {
+  if (event.type === 'touchstart') event.preventDefault();
+  const nav = document.getElementById('nav');
+  nav.classList.toggle('active');
+  const active = nav.classList.contains('active');
+  event.currentTarget.setAttribute('aria-expanded', active);
+  if (active) {
+    event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+  } else {
+    event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+  }
+}
 
-close.addEventListener('click', function() {
-  menu.style.display = 'none';
-});
+btnMobile.addEventListener('click', toggleMenu);
+btnMobile.addEventListener('touchstart', toggleMenu);

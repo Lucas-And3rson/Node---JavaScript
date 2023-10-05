@@ -35,14 +35,14 @@
             <div class="acoes">
                 <div class="icon-detalhar" >
                     <a href="/cliente/<%=c.id%>">
-                        <span class="material-symbols-outlined">
+                        <span id="detalhe" class="material-symbols-outlined">
                             visibility
                         </span>
                     </a>
                 </div>
                 <div class="icon-delete" onclick="return confirm('Você tem certeza que deseja deletar esse Cliente?')">
                     <a href="/cliente/deletar/<%=c.id%>">
-                        <span class="material-symbols-outlined">
+                        <span id="delete" class="material-symbols-outlined">
                         delete
                         </span>
                     </a>
@@ -51,8 +51,8 @@
         </div>  
     </div>
     <% } %>
-    <%- include("../partials/rodape.ejs") %>
 </body>
+<%- include("../partials/rodape.ejs") %>
 </html>
 
          

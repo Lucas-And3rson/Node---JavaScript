@@ -3,44 +3,136 @@
     padding: 0;
 }
 
-.cabecalho{
-    background-color: rgb(120, 180, 214);
-
+ul {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  #logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  #header {
+    box-sizing: border-box;
+    height: 70px;
+    width: 100%;
+    min-width: 300px;
+    padding: 1rem;
     display: flex;
-    flex-direction: row;
-    margin: auto;
-    margin-bottom: 40px;
-}
-.cabecalho ol li{
-    left:0;
-}
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    background: rgb(120, 180, 214);
+  }
+  
+  #menu {
+    display: flex;
+    list-style: none;
+  }
+  
+  #menu a {
+    display: block;
+    padding: 0.5rem;
+  }
+  
+  #menu li{
+    position: relative;
+    float: left;
+  }
+  #menu li a{text-decoration:none; padding:5px 10px; display:block;}
 
-.cabecalho li  ol{
-    position:absolute;
-    left:0;
+  #menu li a:hover{
+    text-decoration: underline;
+  }
+
+  #menu ul > li{
     background-color: rgb(120, 180, 214);
-    display:none;
-    }
+  }
+  
+  #menu ul > li:hover{
+    display: block;
+  }
 
-.cabecalho li:hover ol, .cabecalho li.over ol{display:block;}
-
-.cabecalho li ol li{
-    border-left: solid 1px #000;
-    border-bottom: solid 1px #000;
+  #menu li  ul{
+    position:absolute;
     display:block;
-    width:125px;
+    list-style: none;
+    visibility: hidden;
     }
 
-.cabecalho > li > p{
-     font-weight: bold;
-     color: #000;
- }
-    
-li{
-    list-style-type: none;
-    position:relative;
-    padding: 10px;
-}
+  #menu li:hover ul, #menu li.over ul{visibility: visible;}
+
+  #btn-mobile {
+    display: none;
+  }
+  
+  @media (max-width: 600px) {
+    #menu {
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 0px;
+      opacity: 90%;
+      background: rgb(120, 180, 214);
+      transition: 0.6s;
+      z-index: 1000;
+      width: 0px;
+      height: 0px;
+      visibility: hidden;
+      overflow-y: hidden;
+    }
+    #nav.active #menu {
+      /* height: calc(100vh - 70px); */
+      height: 300px;
+      width: 200px;
+      visibility: visible;
+      overflow-y: auto;
+    }
+    #menu a {
+      padding: 1rem 0;
+      margin: 0 1rem;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    }
+    #menu li:hover ul, #menu li.over ul{
+        position: inherit;
+        left: 15px;
+    }
+    #btn-mobile {
+      display: flex;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      gap: 0.5rem;
+    }
+    #hamburger {
+      border-top: 2px solid;
+      width: 20px;
+    }
+    #hamburger::after,
+    #hamburger::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      margin-top: 5px;
+      transition: 0.3s;
+      position: relative;
+    }
+    #nav.active #hamburger {
+      border-top-color: transparent;
+    }
+    #nav.active #hamburger::before {
+      transform: rotate(135deg);
+    }
+    #nav.active #hamburger::after {
+      transform: rotate(-135deg);
+      top: -7px;
+    }
+  }
 a{
     font-weight: bold;
     color: #000;
@@ -49,10 +141,6 @@ a{
 
 a:hover{
     text-decoration: underline;
-}
-
-.activated{
-    color: white;
 }
 
 .formulario h3{
@@ -142,13 +230,10 @@ table td{
     background-color: rgb(246, 58, 58);
 }
 
-.icon-delete:hover{
+.icon-delete:hover, #delete:hover{
     cursor:pointer;
     background-color: rgb(199, 58, 58);
-
-    .material-symbols-outlined{
-        color: #e6d0d0;
-    }
+    color: #e6d0d0;
 }
 
 .icon-detalhar{
@@ -161,20 +246,19 @@ table td{
     background-color: rgb(58, 155, 246);
 }
 
-.icon-detalhar:hover{
+.icon-detalhar:hover, #detalhe:hover{
     cursor: pointer;
     background-color: rgb(52, 107, 209);
-
-    .material-symbols-outlined{
-        color: #d0d8e6;
-    }
+    color: #d0d8e6;
 }
 
 footer{
+    box-sizing: border-box;
     font-weight: bold;
     background-color: rgb(120, 180, 214);
     color: #000;
 
+    display: flex;
     position: fixed;
     bottom: 0;
 
@@ -182,40 +266,9 @@ footer{
     min-width: 300px;
     height: 50px;    
     text-align: center;
+    justify-content: center;
     line-height: 50px;
 }
-    
-#btn-menu{
-    display: none;
-}
-
-.menu{
-    display: none;
-    width: 200px;
-    position: fixed;
-    opacity: 97%;
-
-    border: solid 1px black;
-    border-radius: 0 0 5px 0;
-    background-color: rgb(120, 180, 214);
-    margin: 0;
-    padding: 0;
-    color: #000;
-    font-weight: bold;
-}
-.menu li  ol{
-    position:absolute;
-    left:0;
-    background-color: rgb(120, 180, 214);
-    display:none;
-    }
-
-.menu li:hover ol, .menu li.over ol{display:block; position:relative;}
-
-.menu li ol li{
-    display:block;
-    width:125px;
-    }
 
 /*------------------ Tela 404 ------------------*/
 
@@ -288,8 +341,6 @@ footer{
     justify-content: space-between;
     margin-bottom: 40px;
 
-    /* transition: flex-direction .5s;
-    transition-timing-function: ease; */
     transition: transform .8s;
 }
 
@@ -352,33 +403,6 @@ footer{
     padding: 5px
 }
 
-@media (max-width: 400px){
-    .cabecalho-menu{
-        display: flex;
-        margin-bottom: 40px;
-        align-items: center;
-        width: 100%;
-        min-width: 300px;
-
-        background-color: rgb(120, 180, 214);
-    }
-    #btn-menu{
-        display: block;
-        padding: 10px;
-        border-right: solid 1px black;
-    }
-    .btn-close{
-        display: flex;
-        align-items: flex-end;
-    }
-    .cabecalho{
-        display: none;
-    }
-    li{
-        border-left: solid 1px #000;
-        border-bottom: solid 1px #000;
-    }
-}
 .informacoes{
     display: flex;
     flex-direction: column;

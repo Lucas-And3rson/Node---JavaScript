@@ -10,36 +10,28 @@
     <title>Document</title>
 </head>
 <body>
-    <ol class="cabecalho">
-        <li><a href="/">Home</a></li>
-	  	<li><p>Cadastrar</p>
-	     	<ol>
+    <header id="header">
+        <a id="logo" href="">Logo</a>
+        <nav id="nav">
+          <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+            <span id="hamburger"></span>
+          </button>
+          <ul id="menu" role="menu">
+            <li><a href="/">Home</a></li>
+            <li>
+                <a href="#">Cadastrar</a>
+	     	<ul>
 	              <li><a href="/clientes/cadastrar">Clientes</a></li>
-	    	</ol>
-		</li>
-        <li><p>Listar</p>
-            <ol>
-                 <li><a href="/clientes">Clientes</a></li>
-           </ol>
-       </li>
-    </ol>
-    <div class="cabecalho-menu">
-        <span class="material-symbols-outlined" id="btn-menu">menu</span>
-    </div>
-    <ol class="menu">
-        <li><p class="btn-close"></p></li>
-        <li><a href="/">Home</a></li>
-	  	<li><p>Cadastrar</p>
-	     	<ol>
-	              <li><a href="/clientes/cadastrar">Clientes</a></li>
-	    	</ol>
-		</li>
-        <li><p>Listar</p>
-            <ol>
-                 <li><a href="/clientes">Clientes</a></li>
-           </ol>
-       </li>
-    </ol>
+	    	</ul>
+            <li>
+                <a href="#">Listar</a>
+	     	<ul>
+	              <li><a href="/clientes">Clientes</a></li>
+	    	</ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
 </body>
     <script src="/js/cabecalho.js"></script>
 </html>
