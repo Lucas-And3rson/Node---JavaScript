@@ -1,26 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="cadastro" lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     <title>Cadastrar</title>
 </head>
-<body>
-    <%- include("../partials/cabeçalho.ejs") %>  
-    <div class="formulario">
-        <form action="/clientes" method="POST">
-            <h3>CADASTRE-SE</h3>
-            <label for="id">ID</label><br>
-            <input type="number" id="id" name="id" min="1" required><br>
-            <label for="nome">Nome</label><br>
-            <input type="text" id="nome" name="nome" required><br>
-            <label for="idade">Idade</label><br>
-            <input type="number" id="idade" name="idade" min="1" required><br>
-            <input type="submit" class="btn-cadastrar" value="Cadastrar">
-        </form>
-    </div>
-    
+<body id="cadastro">
+    <main>
+        <%- include("../partials/cabeçalho.ejs") %>
+        <section id="login">
+            <div id="imagem">
+                <!-- Aqui vai a imagem nas CSS -->
+            </div>
+            <div id="formulario">
+                <h1>Cadastro</h1>
+                <p>Seja bem-vindo(a).</p>
+                <form  action="/clientes" method="POST">
+                    <div class="campo">
+                        <i class="material-symbols-outlined">deployed_code</i>
+                        <input type="number" name="id" id="id" placeholder="Seu id" min="1" required>
+                        <label for="id">Id</label>
+                    </div>
+                    <div class="campo">
+                        <i class="material-symbols-outlined">person</i>
+                        <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
+                        <label for="nome">Nome</label>
+                    </div>
+                    <div class="campo">
+                        <i class="material-symbols-outlined">person</i>
+                        <input type="number" name="idade" id="idade" placeholder="Sua idade"  min="1" required >
+                        <label for="idade">Idade</label>
+                    </div>
+                    <input type="submit" class="cadastrar" value="Cadastrar">
+                </form>
+            </div>
+        </section>
+        <%- include("../partials/rodape.ejs") %>
+    </main>
 </body>
-<%- include("../partials/rodape.ejs") %>
 </html>
