@@ -83,8 +83,7 @@ ul {
       overflow-y: hidden;
     }
     #nav.active #menu {
-      /* height: calc(100vh - 70px); */
-      height: 300px;
+      height: calc(100vh - 70px);
       width: 200px;
       visibility: visible;
       overflow-y: auto;
