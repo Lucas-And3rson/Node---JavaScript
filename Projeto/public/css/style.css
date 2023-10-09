@@ -6,6 +6,22 @@
     box-sizing: border-box;
 }
 
+h3{
+  display: block;
+  width: 280px;
+  border-radius: 5px;
+  position: absolute;
+  left: 0px;
+  top: 200px;
+  background-color: aquamarine;
+  transition: 10s;
+}
+
+h3:hover{
+  left: calc(100vw - 280px);
+  top: 700px;
+}
+
 ul {
     margin: 0px;
     padding: 0px;
@@ -23,6 +39,7 @@ ul {
     height: 70px;
     width: 100%;
     min-width: 300px;
+    margin-bottom: 30px;
     
     justify-content: space-between;
     align-items: center;
@@ -156,6 +173,22 @@ a:hover{
     right: 0;
     bottom: 0;
 }
+
+.icon-edit{
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  padding: 10px;
+  border-radius: 5px;
+
+  background-color: rgb(58, 246, 146);
+}
+
+.icon-edit:hover, #edit:hover{
+  cursor:pointer;
+  background-color: rgb(53, 202, 123);
+  color: #e6d0d0;
+}
 .icon-delete{
     display: flex;
     justify-content: center;
@@ -209,6 +242,11 @@ footer{
     line-height: 50px;
 }
 
+.espaco-footer{
+  display: block;
+  margin-top: 40px;
+}
+
 /*------------------ Tela 404 ------------------*/
 
 .error{
@@ -259,6 +297,17 @@ footer{
     margin-bottom: 40px;
     border-radius: 10px;
     background-color: lightcoral;
+}
+.editado-alert{
+  display: flex;
+  margin: auto;
+  width: 230px;
+  left: 50%;
+  justify-content: center;
+
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: rgb(128, 148, 240);
 }
 
 .content-listar{
@@ -354,6 +403,9 @@ footer{
     .informacoes{
         display: flex;
         flex-direction: column;
+    }
+    .icon-delete, .icon-detalhar, .icon-edit{
+      width: 40px;
     }
 }
 

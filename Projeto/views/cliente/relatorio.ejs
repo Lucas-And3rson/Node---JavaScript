@@ -17,6 +17,11 @@
         <div class="deletado-alert">
             Cliente removido com sucesso!
         </div>
+    <% } 
+    if(status == 3){ %>
+        <div class="editado-alert">
+            Cliente editado com sucesso!
+        </div>
     <% } %>
     <div class="content-listar">
         <% for (const c of VClientes) {%>
@@ -46,11 +51,19 @@
                         delete
                         </span>
                     </a>
-                </div>  
+                </div>
+                <div class="icon-edit">
+                    <a href="/cliente/cadastrar/<%=c.id%>">
+                        <span id="edit" class="material-symbols-outlined">
+                        edit
+                        </span>
+                    </a>
+                </div>    
             </div>
         </div>  
     </div>
     <% } %>
+    <div class="espaco-footer"></div>
 </body>
 <%- include("../partials/rodape.ejs") %>
 </html>
