@@ -21,7 +21,7 @@
                 <form  action="/clientes" method="POST">
                     <div class="campo">
                         <i class="material-symbols-outlined">deployed_code</i>
-                        <input type="number" name="id" id="id" placeholder="Seu id" min="1" value="<%= clienteUpdate.id %>" required>
+                        <input <% if(clienteUpdate.id != undefined){ %> readonly <% } %>type="number" name="id" id="id" placeholder="Seu id" min="1" value="<%= clienteUpdate.id %>" required>
                         <label for="id">Id</label>
                     </div>
                     <div class="campo">
