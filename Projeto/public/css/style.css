@@ -6,20 +6,8 @@
     box-sizing: border-box;
 }
 
-h3{
-  display: block;
-  width: 280px;
-  border-radius: 5px;
-  position: absolute;
-  left: 0px;
-  top: 200px;
-  background-color: aquamarine;
-  transition: 10s;
-}
-
-h3:hover{
-  left: calc(100vw - 280px);
-  top: 700px;
+body{
+  overflow-x: hidden;
 }
 
 ul {
@@ -244,7 +232,7 @@ footer{
 
 .espaco-footer{
   display: block;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 /*------------------ Tela 404 ------------------*/
