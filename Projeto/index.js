@@ -5,6 +5,7 @@ const app = express();
 const mongoose = require("mongoose");
 mongoose.connect("mongodb+srv://lucas:TV8wt2OrhQ4KhfIX@cluster0.kkoixjy.mongodb.net/?retryWrites=true&w=majority");
 const ClienteModel = require("./models/ClienteModel")
+const UsuarioModel = require("./models/UsuarioModel")
 
 // Sem Internet
 
@@ -14,6 +15,8 @@ app.use(express.static("public"));
 
 const ClienteRoutes = require('./routes/ClienteRoutes');
 app.use(ClienteRoutes);
+const UsuarioRoutes = require('./routes/UsuarioRoutes');
+app.use(UsuarioRoutes);
 //Minha senha do Mongo: TV8wt2OrhQ4KhfIX
 //Minha URL: mongodb+srv://lucas:TV8wt2OrhQ4KhfIX@cluster0.kkoixjy.mongodb.net/?retryWrites=true&w=majority
 

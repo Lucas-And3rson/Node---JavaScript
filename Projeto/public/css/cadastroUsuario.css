@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+html{
+    height: 100vh;
+    width: 100vw;
+}
+section#login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    background-color: white;
+    width: 250px;
+    height: 480px;
+
+    border-radius: 20px;
+    box-shadow: 20px 20px 15px -3px rgba(0,0,0, 0.5),0px 10px 15px -3px rgba(0,0,0,0.1);
+  
+    transform: translate(-50%, -50%);
+    transition: width .3s, height .3s;
+    transition-timing-function: ease;
+  }
+  
+  section#login > div#imagem {
+    display: block;
+    background: #5f2c82 url(../img/digital.jpg) no-repeat;
+    background-size: cover;
+    background-position: left bottom;
+    height: 200px;
+  }
+  
+  section#login > div#formulario {
+    display: block;
+    padding: 10px;
+  }
+  
+  div#formulario > h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  div#formulario > p {
+    font-size: 0.8em;
+  }
+  
+  form > div.campo {
+    background-color: #0e24e6;
+    border: 2px solid #0e24e6;
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    margin: 5px 0px;
+  }
+  
+  div.campo > label {
+    display: none;
+  }
+  
+  div.campo > i {
+    color: white;
+    /*background-color: black;*/
+    font-size: 1.9em;
+    width: 40px;
+    padding: 5px;
+  }
+  
+  div.campo > input {
+    background-color: #94cfcd;
+    font-size: 1em;
+    width: calc(100% - 45px);
+    height: 100%;
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px;
+    transform: translateY(-10px);
+  }
+  
+  div.campo > input:focus-within {
+    background-color: white;
+    border: none;
+  }
+  
+  /*botão de logar*/
+  form > input.cadastrar {
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+    height: 40px;
+    padding-top: 5px;
+    margin-top: 5px;
+    background-color: #53aaa7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  form > input.cadastrar:hover {
+    background-color: #2d6462;
+  }
+  
+  form > a.botao {
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+    height: 40px;
+    padding-top: 5px;
+    margin-top: 5px;
+    background-color: white;
+    color: #2d6462;
+    border: 1px solid #49a09d;
+    border-radius: 7px;
+    text-decoration: none;
+  }
+  
+  form > a.botao:hover {
+    background-color: #6cd3cf;
+  }
+  
+  form > a.botao > i {
+    font-size: 0.8em;
+  }
+  
+  label{
+      margin-right: 10px;
+  }
+  
+  
+  /* MEDIA-QUERY Tela de Cadastro */
+  
+  @media screen and (min-width: 600px) and (max-width: 992px) { /* CONFIGURAÇÃO PARA TABLET */
+  html{
+    height: 100vh;
+  }
+    section#login {
+        width: 80vw;
+        height: 280px;
+        margin-top: 0px;
+    }
+  
+    section#login > div#imagem {
+        float: left;
+        width: 30%;
+        height: 100%;
+    }
+  
+    section#login > div#formulario {
+        float: right;
+        width: 70%;
+    }
+  }
+  
+  @media screen and (min-width: 992px) { /* CONFIGURAÇÕES PARA DESKTOP */
+    /* body {
+        background-image: linear-gradient(to top, #49a09d, #13349e);
+    } */
+    html{
+        height: 100vh;
+      }
+
+    section#login {
+        width: 950px;
+        height: 350px;
+        margin-top: 0px;
+    }
+  
+    section#login > div#imagem {
+        float: right;
+        width: 50%;
+        height: 100%;
+    }
+  
+    section#login > div#formulario {
+        float: left;
+        width: 50%;
+    }
+  
+    div#formulario > h1 {
+        font-size: 2em;
+    }
+  
+    div#formulario > p {
+        font-size: 1em;
+        margin: 20px 0px;
+    }
+  }
+  
+  .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+  }
+  
+  main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+  }
+
+/*------------------ Tela 404 ------------------*/
+
+.error{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+}
+.content-erro{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    
+    border-radius: 10px;
+    box-shadow: 20px 20px 15px -3px rgba(0,0,0, 0.5),0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.errorRight{
+    padding: 10px;
+
+}
+
+.errorLeft{
+    padding: 10px;
+}

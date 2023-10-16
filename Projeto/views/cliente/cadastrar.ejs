@@ -35,7 +35,7 @@
                         <label for="idade">Idade</label>
                     </div>
                     <input type="hidden" name="_id" value="<%= clienteUpdate._id %>">
-                    <input type="submit" class="cadastrar" value="Cadastrar">
+                    <input type="submit" class="cadastrar" value="<% if(clienteUpdate.id != undefined){%>Editar<%} else{%>Cadastrar<%}%>">
                 </form>
             </div>
         </section>

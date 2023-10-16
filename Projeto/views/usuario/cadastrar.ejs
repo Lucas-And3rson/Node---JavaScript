@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html id="cadastro" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/css/cadastroUsuario.css">
+    <title>Cadastrar Usuario</title>
+</head>
+<body>
+    <main>
+        <section id="login">
+            <div id="imagem">
+                <!-- Aqui vai a imagem nas CSS -->
+            </div>
+            <div id="formulario">
+                <h1>Cadastro</h1>
+                <p>Seja bem-vindo(a).</p>
+                <form  action="/usuarios" method="POST">
+                    <div class="campo">
+                        <i class="material-symbols-outlined">person</i>
+                        <input type="text" name="nome" id="nome" value="<%= usuarioUpdate.nome %>" placeholder="Seu nome" required>
+                        <label for="nome">Nome</label>
+                    </div>
+                    <div class="campo">
+                        <i class="material-symbols-outlined">mail</i>
+                        <input type="email" name="email" id="email" value="<%= usuarioUpdate.email %>" placeholder="Seu email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="campo">
+                        <i class="material-symbols-outlined">visibility</i>
+                        <input type="password" name="senha" id="senha" value="<%= usuarioUpdate.senha %>" placeholder="Sua senha"  min-length="8" required >
+                        <label for="senha">Senha</label>
+                    </div>
+                    <input type="hidden" name="_id" value="<%= usuarioUpdate._id %>">
+                    <input value="<% if(usuarioUpdate._id != undefined){%>Editar<%} else{%>Cadastrar<%}%>" type="submit" class="cadastrar" >
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

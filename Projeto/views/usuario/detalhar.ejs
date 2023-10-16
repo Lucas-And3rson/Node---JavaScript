@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detalhar Usuário</title>
 </head>
 <body>
     <%- include("../partials/cabeçalho.ejs") %>
@@ -12,18 +12,19 @@
         <div class="card">
         <div class="card__left">
             <div class="id-absolute">
-               <span><%=c.id%></span>     
+               <span><%=u.id%></span>     
             </div>
             <img src="../img/person.jpg" alt="default">
         </div> 
         <div class="card__right">
             <div class="informacoes">
-                <span><%=c.nome%></span>
-                <p><%=c.idade%> anos</p>
+                <span><%=u.nome%></span>
+                <p><%=u.email%></p>
+                <p><%=u.senha%></p>
             </div>
             <div class="acoes">
-                <div class="icon-delete" onclick="return confirm('Você tem certeza que deseja deletar esse Cliente?')">
-                    <a href="/cliente/deletar/<%=c.id%>">
+                <div class="icon-delete" onclick="return confirm('Você tem certeza que deseja deletar esse Usuario?')">
+                    <a href="/usuario/deletar/<%=u.id%>">
                         <span class="material-symbols-outlined">
                         delete
                         </span>
