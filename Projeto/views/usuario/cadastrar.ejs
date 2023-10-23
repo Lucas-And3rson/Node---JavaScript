@@ -24,7 +24,13 @@
                         <input type="text" name="nome" id="nome" value="<%= usuarioUpdate.nome %>" placeholder="Seu nome" required>
                         <label for="nome">Nome</label>
                     </div>
-                    <div class="campo">
+                    <% if(status == 4){ %>
+                        <div class="existe">
+                            Esse email já existe!
+                        </div>
+                    <% } %>
+                    <div class="campo"  <% if(status == 4){ %> style = "background-color: rgb(230, 65, 65); border: 2px solid rgb(230, 65, 65);" <% } %>>
+                        
                         <i class="material-symbols-outlined">mail</i>
                         <input type="email" name="email" id="email" value="<%= usuarioUpdate.email %>" placeholder="Seu email" required>
                         <label for="email">Email</label>

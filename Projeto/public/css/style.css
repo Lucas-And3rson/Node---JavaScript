@@ -355,7 +355,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 35px;
+    
 
     position: absolute;
     top: 0;
@@ -366,7 +366,7 @@ footer{
     padding: 5px;
     opacity: 80%;
     background-color: rgba(9, 90, 128, 0.425);
-    border-radius: 50%;
+    border-radius: 5px;
 }
 
 .card__left > .id-absolute > span{
