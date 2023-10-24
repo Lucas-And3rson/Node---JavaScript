@@ -27,10 +27,8 @@ class UsuarioController{
             
         }else{ //atualizar
             const user = await UsuarioModel.findOne({ email: req.body.email });
-            console.log(user)
-            console.log(req.body.email)
-            if(user == null || user.email == req.body.email){
-                console.log(1)
+            const userAtual = await UsuarioModel.findOne({ _id: req.body._id });
+            if(user == null || userAtual.email == req.body.email){
                 const id = req.body._id;
                 const usuarioUpdate = {
                     nome: req.body.nome,
@@ -39,6 +37,9 @@ class UsuarioController{
                 }
                 await UsuarioModel.findOneAndUpdate({_id:id}, usuarioUpdate);
                 res.redirect("/usuarios?s=3");
+            }else{
+                //email existe
+                res.redirect(`usuarios/cadastrar?s=4&nome=${req.body.nome}&email=${req.body.email}`);
             }
         }
         }

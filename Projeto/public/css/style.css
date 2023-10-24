@@ -164,11 +164,11 @@ a:hover{
 
 .icon-edit{
   display: flex;
+  align-items: center;
   justify-content: center;
   width: 50px;
-  padding: 10px;
+ 
   border-radius: 5px;
-
   background-color: rgb(58, 246, 146);
 }
 
@@ -179,13 +179,12 @@ a:hover{
 }
 .icon-delete{
     display: flex;
+    align-items: center;
     justify-content: center;
     width: 50px;
-    padding: 10px;
+
     border-radius: 5px;
     margin-left: 2px;
-
-
     background-color: rgb(246, 58, 58);
 }
 
@@ -197,6 +196,7 @@ a:hover{
 
 .icon-detalhar{
     display: flex;
+    align-items: center;
     justify-content: center;
     width: 50px;
     padding: 10px;
