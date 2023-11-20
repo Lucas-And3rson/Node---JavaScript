@@ -3,7 +3,14 @@ const app = express();
 
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://lucas:TV8wt2OrhQ4KhfIX@cluster0.kkoixjy.mongodb.net/?retryWrites=true&w=majority");
+const session = require("express-session");
+app.use(session({
+    secret: 'ifpe',
+    saveUninitialized: false,
+    resave: false
+    }));
+    require("dotenv/config");
+mongoose.connect(process.env.MONGO_URI);
 const ClienteModel = require("./models/ClienteModel")
 const UsuarioModel = require("./models/UsuarioModel")
 
@@ -21,7 +28,15 @@ app.use(UsuarioRoutes);
 //Minha URL: mongodb+srv://lucas:TV8wt2OrhQ4KhfIX@cluster0.kkoixjy.mongodb.net/?retryWrites=true&w=majority
 
     app.get("/", function(req, res){
-        res.render("index"); 
+        if(req.session.usuario!=undefined){
+            res.render("index");
+        }else{
+            res.redirect("/usuarios/login");
+        }''
+    });
+    app.get("/logout", function(req, res){
+        req.session.usuario = null;
+        res.redirect("/usuarios/login")
     });
     //caso não encontre a página
     app.use(function(res, res) {
@@ -67,6 +82,6 @@ app.use(UsuarioRoutes);
 //     window.print();
 // });
 
-app.listen("2005", function(){
+app.listen(process.env.PORT, function(){
     console.log("Run");
 });
