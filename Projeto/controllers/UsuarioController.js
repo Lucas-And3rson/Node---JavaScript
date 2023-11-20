@@ -57,7 +57,6 @@ class UsuarioController{
         res.render("usuario/detalhar", {u});
 }
     static cadastrarRender(req, res){
-        const id = req.params.id;
         const status = req.query.s;
         let usuarioUpdate = {
             nome: req.query.nome,

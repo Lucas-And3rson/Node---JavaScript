@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 
-
 const mongoose = require("mongoose");
 const session = require("express-session");
 app.use(session({
@@ -32,7 +31,7 @@ app.use(UsuarioRoutes);
             res.render("index");
         }else{
             res.redirect("/usuarios/login");
-        }''
+        }
     });
     app.get("/logout", function(req, res){
         req.session.usuario = null;
