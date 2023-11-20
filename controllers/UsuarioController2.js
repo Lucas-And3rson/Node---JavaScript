@@ -1,5 +1,4 @@
 const ClienteModel = require("../models/ClienteModel");
-const Cliente = require("../Cliente");
 const VClientes = [];
 
 

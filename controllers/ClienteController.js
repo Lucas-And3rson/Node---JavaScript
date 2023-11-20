@@ -1,7 +1,7 @@
 const ClienteModel = require("../models/ClienteModel");
-const Cliente = require("../Cliente");
-const { findOneAndUpdate } = require("../models/ClienteModel");
-const VClientes = [];
+// const Cliente = require("../Cliente");
+// const { findOneAndUpdate } = require("../models/ClienteModel");
+// const VClientes = [];
 
 
 class ClienteController{

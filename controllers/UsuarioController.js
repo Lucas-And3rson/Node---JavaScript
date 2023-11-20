@@ -1,6 +1,6 @@
 const UsuarioModel = require("../models/UsuarioModel");
 // const Usuario = require("../Usuario");
-const { findOneAndUpdate } = require("../models/UsuarioModel");
+// const { findOneAndUpdate } = require("../models/UsuarioModel");
 // const VUsuarios = [];
 const bcryptjs = require("bcryptjs");
 
