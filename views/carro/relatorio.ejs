@@ -4,56 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cliente</title>
+    <title>Lista de Carros</title>
 </head>
 <body>  
     <%- include("../partials/cabeçalho.ejs") %>
     <% if(status == 1){ %>
         <div class="cadastrado-alert">
-            Cliente Cadastrado!
+            Carro Cadastrado!
         </div>
     <%}
     if(status == 2){ %>
         <div class="deletado-alert">
-            Cliente removido com sucesso!
+            Carro removido com sucesso!
         </div>
     <% } 
     if(status == 3){ %>
         <div class="editado-alert">
-            Cliente editado com sucesso!
+            Carro editado com sucesso!
         </div>
     <% } %>
     <div class="content-listar">
-        <% for (const c of VClientes) {%>
+        <% for (const c of VCarros) {%>
         <div class="card">
         <div class="card__left">
             <div class="id-absolute">
                <span><%=c.id%></span>     
             </div>
-            <img src="img/person.jpg" alt="default">
+            <img src="img/car.png" alt="default">
         </div> 
         <div class="card__right">
             <div class="informacoes">
-                <span><%=c.nome%></span>
-                <p><%=c.idade%> anos</p>
+                <span><%=c.marca%> <%=c.nome%> - <%=c.ano%></span>
+                <p>R$<%=c.valor%></p>
             </div>
             <div class="acoes">
                 <div class="icon-detalhar" >
-                    <a href="/cliente/<%=c.id%>">
+                    <a href="/carro/<%=c.id%>">
                         <span id="detalhe" class="material-symbols-outlined">
                             visibility
                         </span>
                     </a>
                 </div>
-                <div class="icon-delete" onclick="return confirm('Você tem certeza que deseja deletar esse Cliente?')">
-                    <a href="/cliente/deletar/<%=c.id%>">
+                <div class="icon-delete" onclick="return confirm('Você tem certeza que deseja deletar esse carro?')">
+                    <a href="/carro/deletar/<%=c.id%>">
                         <span id="delete" class="material-symbols-outlined">
                         delete
                         </span>
                     </a>
                 </div>
                 <div class="icon-edit">
-                    <a href="/cliente/cadastrar/<%=c.id%>">
+                    <a href="/carro/cadastrar/<%=c.id%>">
                         <span id="edit" class="material-symbols-outlined">
                         edit
                         </span>

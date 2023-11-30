@@ -6,10 +6,6 @@ const bcryptjs = require("bcryptjs");
 
 class UsuarioController{
     static async cadastrar(req, res){
-        // const NovoUsuario = req.body;
-        // console.log(NovoUsuario)
-        // Vusuarios.push(new Usuario(NovoUsuario.id, NovoUsuario.nome, NovoUsuario.idade));
-        // res.redirect("./usuarios?s=1");
         if(req.body._id == ''){ //cadastrar
             const user = await UsuarioModel.findOne({ email: req.body.email });
             if(user != null){

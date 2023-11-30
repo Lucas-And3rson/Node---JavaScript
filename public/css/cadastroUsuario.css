@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -21,7 +22,7 @@ section#login {
     overflow: hidden;
     background-color: white;
     width: 250px;
-    height: 480px;
+    height: 520px;
 
     border-radius: 20px;
     box-shadow: 20px 20px 15px -3px rgba(0,0,0, 0.5),0px 10px 15px -3px rgba(0,0,0,0.1);
@@ -50,8 +51,9 @@ section#login {
   }
   
   div#formulario > p {
-    font-size: 0.8em;
-  }
+    font-size: 1em;
+    margin: 20px 0px;
+}
   
   form > div.campo {
     background-color: #0e24e6;
@@ -91,7 +93,26 @@ section#login {
     border: none;
   }
   
-  /*botão de logar*/
+  /*botão de logar e cadastrar*/
+  form > a.signUpIn{
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+    height: 40px;
+    padding-top: 10px;
+    margin-top: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #53aa7f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form > a.signUpIn:hover{
+    background-color: #2d6436;
+  }
   form > input.cadastrar {
     display: block;
     text-align: center;
@@ -157,7 +178,7 @@ section#login {
   }
     section#login {
         width: 80vw;
-        height: 280px;
+        height:330px;
         margin-top: 0px;
     }
   
@@ -183,7 +204,7 @@ section#login {
 
     section#login {
         width: 950px;
-        height: 350px;
+        height: 330px;
         margin-top: 0px;
     }
   
@@ -200,11 +221,6 @@ section#login {
   
     div#formulario > h1 {
         font-size: 2em;
-    }
-  
-    div#formulario > p {
-        font-size: 1em;
-        margin: 20px 0px;
     }
   }
   
