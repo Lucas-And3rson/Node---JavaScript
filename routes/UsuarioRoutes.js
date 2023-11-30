@@ -11,6 +11,6 @@ routes.get("/usuarios/login", UsuarioController.loginRender);
 routes.post("/usuarios/login", UsuarioController.checkLogin);
 routes.get("/usuarios/cadastrar", UsuarioController.cadastrarRender);
 routes.get("/usuario/cadastrar/:id", auth, UsuarioController.atualizar);
-routes.get("/usuario/deletar/:id", UsuarioController.deletar);
+routes.get("/usuario/deletar/:id", auth, UsuarioController.deletar);
 
 module.exports = routes;

@@ -22,7 +22,7 @@ section#login {
     overflow: hidden;
     background-color: white;
     width: 250px;
-    height: 520px;
+    height: 550px;
 
     border-radius: 20px;
     box-shadow: 20px 20px 15px -3px rgba(0,0,0, 0.5),0px 10px 15px -3px rgba(0,0,0,0.1);
@@ -178,7 +178,7 @@ section#login {
   }
     section#login {
         width: 80vw;
-        height:330px;
+        height:370px;
         margin-top: 0px;
     }
   
@@ -204,7 +204,7 @@ section#login {
 
     section#login {
         width: 950px;
-        height: 330px;
+        height: 370px;
         margin-top: 0px;
     }
   
