@@ -17,6 +17,7 @@ class UsuarioController{
                 const novoUsuario = new UsuarioModel ({
                     nome: req.body.nome,
                     email: req.body.email,
+                    nivel: req.body.nivel,
                     senha: hash
                 })
                 await novoUsuario.save();
@@ -32,6 +33,7 @@ class UsuarioController{
                 const usuarioUpdate = {
                     nome: req.body.nome,
                     email: req.body.email,
+                    nivel: req.body.nivel,
                     senha: hash
                 }
                 await UsuarioModel.findOneAndUpdate({_id:id}, usuarioUpdate);
@@ -56,20 +58,17 @@ class UsuarioController{
         const status = req.query.s;
         let usuarioUpdate = {
             nome: req.query.nome,
-            email: req.query.email
+            email: req.query.email,
+            nivel: req.body.nivel
         };
-        if(req.session.usuario==null){
-            res.render("usuario/cadastrar", {usuarioUpdate, status});
-        }else{
-            res.render("/");
-        }
+        res.render("usuario/cadastrar", {usuarioUpdate, status});
     }
     static async checkLogin(req, res){
         const user = await UsuarioModel.findOne({ email: req.body.email });
         if(user != null){
             if(bcryptjs.compareSync(req.body.senha, user.senha)){ //email e senha válidos
                 req.session.usuario = user.email;
-                res.redirect("/");
+                res.redirect("/hub");
             }else{ //senha inválida
                 res.redirect(`/usuarios/login?s=6&email=${req.body.email}`)
             }

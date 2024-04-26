@@ -4,88 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16"  href="/img/favicon-16x16.ico">
+    <link rel="icon" type="image/png" sizes="16x16"  href="/img/favicon-16x16.png">
     <link rel="stylesheet" href="/css/index.css">
-    <title>Concessionária</title>
+
+        <!-- Custom styles for this template -->
+        <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    
+    <title>Colonia Z-65</title>
 </head>
 <body>
     <%- include("partials/cabeçalho.ejs") %>
-    <h1>Concessionária</h1>    
-    <h1>Carro Popular</h1>
 
-    <section class="flex">
-        <div>
-          <img src="./img/Onix.jpg">
-          <p>Onix Turbo 2015</p>
-        </div>
-        <div>
-          <img src="./img/GOL.jpg">
-          <p>Gol 1.6 2015 2015</p>
-        </div>
-        <div>
-          <img src="./img/Siena.jpg">
-          <p>Siena 1.4 2012</p>
-        </div>
-      <div>
-        <img src="./img/Onix.jpg">
-        <p>Onix Turbo 2015</p>
-      </div>
-      <div>
-        <img src="./img/GOL.jpg">
-        <p>Gol 1.6 2015</p>
-      </div>
-      <div>
-        <img src="./img/Siena.jpg">
-        <p>Siena 1.4 2012</p>
-      </div>
+     <!-- Tela Contato -->
+     <%- include("partials/btn-contato.ejs") %>
+
+    <br>
+    
+    
+    <section class="banner">
+      <h1>VEM SER DA <span>COLÔNIA Z-65</span></h1>
+      <video id="background-video" autoplay loop muted poster="img/background.mp4">
+      <source src="img/background.mp4" type="video/mp4">
+      </video>
     </section>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <h1></h1>
-
-    <section class="grid1">
-      <div>
-        <img src="./img/Onix.jpg">
-        <p>Onix Turbo 2015</p>
-      </div>
-      <div>
-        <img src="./img/GOL.jpg">
-        <p>Gol 1.6 2015</p>
-      </div>
-      <div>
-        <img src="./img/Siena.jpg">
-        <p>Siena 1.4 2012</p>
-      </div>
-      <div>
-        <img src="./img/Siena.jpg">
-        <p>Siena 1.4 2012</p>
-      </div>
-      <div>
-        <img src="./img/GOL.jpg">
-        <p>Gol 1.6 2015</p>
-      </div>
-      <div>
-        <img src="./img/Onix.jpg">
-        <p>Onix Turbo 2015</p>
-      </div>
-      <div>
-        <img src="./img/Siena.jpg">
-        <p>Siena 1.4 2012</p>
-      </div>
-      <div>
-        <img src="./img/GOL.jpg">
-        <p>Gol 1.6 2015</p>
-      </div>
-      <div>
-        <img src="./img/Onix.jpg">
-        <p>Onix Turbo 2015</p>
-      </div>
-      <div class="anuncio">
-        <img src="./img/icarros.png">
-        <p>Anúncio</p>
-      </div>
-    </section>
-
-    <div class="espaco-footer"></div>
-    <%- include("./partials/rodape.ejs") %>
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 </body>
 </html>

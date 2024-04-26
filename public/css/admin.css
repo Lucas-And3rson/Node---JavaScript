@@ -1,0 +1,9 @@
+.existe{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+  
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(230, 65, 65);
+  }

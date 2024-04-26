@@ -11,34 +11,24 @@
     <title></title>
 </head>
 <body>
-    <header id="header">
-        <a id="logo" href="">Logo</a>
+    <header id="header" aria-label="Abrir header">
+        <img id="logo" src="img/Logo-Colonia (2).png" alt="Logo">
         <nav id="nav">
           <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
             <span id="hamburger"></span>
           </button>
           <ul id="menu" role="menu">
-            <li><a href="/">Home</a></li>
-            <li>
-                <a href="#">Cadastrar</a>
-	     	<ul>
-	            <!-- <li><a href="/clientes/cadastrar">Clientes</a></li> -->
-              <li><a href="/carros/cadastrar">Carros</a></li>
-	    	</ul>
-            <li>
-                <a href="#">Listar</a>
-	     	<ul>
-	          <!-- <li><a href="/clientes">Clientes</a></li> -->
-            <li><a href="/carros">Carros</a></li>
-	    	</ul>
-            </li>
-            <li>
-              <a href="/logout" onclick="return confirm('Você tem certeza que deseja sair?')">
-                <i class="material-symbols-outlined">logout</i>
-              </a>
-            </li>
+            <li class="item-menu"><a href="/">INÍCIO</a></li>
+            <li class="item-menu"><a href="/eventos">EVENTOS</a></li>
+            <li class="item-menu"><a href="/sobre">SOBRE</a></li>
           </ul>
         </nav>
+
+          <button class="btn-contato">
+            <a href="#" data-toggle="modal" data-target="#contatoModal">
+                CONTATO
+            </a>
+          </button>
       </header>
 </body>
     <script src="/js/cabecalho.js"></script>

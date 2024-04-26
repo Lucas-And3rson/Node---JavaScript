@@ -16,25 +16,87 @@ ul {
   }
   
   #logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    padding: 5px auto;
+    border-radius: 50%;
+    border: solid 1px #fff;
+    width: 100px;
+    height: 100px;
   }
-  
+
+  #header li{
+    padding: 0px 15px;
+  }
+
+  #header li a{
+    padding: 0px 15px;
+    color: #fff;
+  }
+
+  #header li:hover{
+    background-color: #1196ba;
+  }
+  #header li.ativo{
+    background-color: #1196ba;
+  }
+  #header .btn-contato{
+    width: 120px;
+    height: 40px;
+    border: 0;
+    background-color: #1196ba;
+    cursor: pointer;
+    transition: .2s;
+  }
+  #header .btn-contato:hover{
+    background-color: #28bcd7;
+  }
+  #header .btn-contato a{
+    font-weight: bold;
+    text-decoration:none;
+    color: #fff;
+  }
+
   #header {
     box-sizing: border-box;
     padding: 1rem;
     display: flex;
-    height: 70px;
+    position: fixed;
     width: 100%;
+    height: 120px;
     min-width: 300px;
-    margin-bottom: 30px;
-    
+    margin: 0 auto;
+
     justify-content: space-between;
     align-items: center;
-    
-    background: rgb(120, 180, 214);
+    background: 0%;
     z-index: 900;
-    
+
+    transition: 0.5s;
+  }
+
+  #header.rolagem {
+    background: #fff;
+    height: 60px;
+    transition: 0.3s;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    #logo {
+      visibility: hidden;
+      transition: .1s;
+    }
+    #menu li a{
+      color: #000;
+    }
+  }
+
+  #background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
   }
   
   #menu {
@@ -51,19 +113,13 @@ ul {
     position: relative;
     float: left;
   }
-  #menu li a{text-decoration:none; padding:5px 10px; display:block;}
+  #menu li a{text-decoration:none; padding:5px 10px; display:block; color: #fff;}
 
-  #menu li a:hover{
-    text-decoration: underline;
-  }
-
-  #menu ul > li{
-    background-color: rgb(120, 180, 214);
-  }
   
-  #menu ul > li:hover{
-    display: block;
-  }
+
+  #menu ul > li{background-color: rgb(120, 180, 214);}
+  
+  #menu ul > li:hover{display: block;}
 
   #menu li  ul{
     position:absolute;
@@ -79,25 +135,36 @@ ul {
   }
   
   @media (max-width: 600px) {
+    #logo {
+      display: none;
+      transition: .1s;
+    }
+    #menu li a{
+      color: #000;
+    }
     #menu {
       flex-direction: column;
       position: absolute;
-   
-      right: 0px;
-      opacity: 90%;
-      background: rgb(120, 180, 214);
-      transition: 0.6s;
+      align-items: center;
+      margin:auto;
+      margin-top: 0px;
+      top: 60px;
+      left: 0px;
+      background: #fff;
+      transition: 0.3s;
       z-index: 1000;
       width: 0px;
-      height: 0px;
+      height: 100vh;
       visibility: hidden;
       overflow-y: hidden;
     }
     #nav.active #menu {
-      height: calc(100vh - 120px);
-      width: 200px;
+      z-index: 2000;
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
       visibility: visible;
-      overflow-y: auto;
+      overflow-y: hidden;
     }
     #menu a {
       padding: 1rem 0;
@@ -118,8 +185,10 @@ ul {
       gap: 0.5rem;
     }
     #hamburger {
+      z-index: 1100;
       border-top: 2px solid;
       width: 20px;
+      right: 10px;
     }
     #hamburger::after,
     #hamburger::before {
@@ -132,6 +201,10 @@ ul {
       transition: 0.3s;
       position: relative;
     }
+      menu li a{
+        color: #000;
+      }
+    
     #nav.active #hamburger {
       border-top-color: transparent;
     }
@@ -149,12 +222,7 @@ a{
     color: #000;
     text-decoration: none;
 }
-
-a:hover{
-    text-decoration: underline;
-}
-
-.card__right > .acoes{
+.acoes{
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -211,30 +279,6 @@ a:hover{
     color: #d0d8e6;
 }
 
-footer{
-    box-sizing: border-box;
-    font-weight: bold;
-    background-color: rgb(120, 180, 214);
-    color: #000;
-
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    z-index: 1100;
-
-    width: 100%;
-    min-width: 300px;
-    height: 50px;    
-    text-align: center;
-    justify-content: center;
-    line-height: 50px;
-}
-
-.espaco-footer{
-  display: block;
-  margin-top: 50px;
-}
-
 /*------------------ Tela 404 ------------------*/
 
 .error{
@@ -281,7 +325,6 @@ footer{
     width: 230px;
     left: 50%;
     justify-content: center;
-
     margin-bottom: 40px;
     border-radius: 10px;
     background-color: lightcoral;
@@ -289,10 +332,8 @@ footer{
 .editado-alert{
   display: flex;
   margin: auto;
-  width: 230px;
   left: 50%;
   justify-content: center;
-
   margin-bottom: 40px;
   border-radius: 10px;
   background-color: rgb(128, 148, 240);
@@ -306,83 +347,133 @@ footer{
 }
 
 /*------------------ Listagem de Clientes ------------------*/
+.card__acoes{
+  width: 80%;
+  height: 70px;
+  border-radius: 5px;
+  padding: 20px;
+  justify-content: end;
+  
+  display: flex;
+  flex-direction: row;
+  min-width: 270px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .card{
-    width: 70%;
+    width: 98%;
+    height: 280px;
+    top: 50px;
     border-radius: 5px;
-    box-shadow: 20px 20px 40px 15px rgba(0,0,0,0.6);
 
     display: flex;
     flex-direction: row;
     min-width: 270px;
-    justify-content: space-between;
     margin-bottom: 40px;
 
     transition: transform .8s;
 }
 
 .card:hover{
-    transform: scale(1.1);
-}
-.card__right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 10px;
-}
-
-.card__right > .informacoes > span {
-    font-weight: bold;
-}
-
-.card__right > .informacoes > a {
-    margin-top: 15px;
-    font-size: 25px;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.card__right > .informacoes > p {
-    color: rgb(70, 70, 70);
+    transform: scale(1.02);
 }
 
 .card__left {
     display: flex;
-    justify-content: center;
-}
-
-.card__left > .id-absolute{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 5px;
-    margin-left: 5px;
-
-    padding: 5px;
-    opacity: 80%;
-    background-color: rgba(9, 90, 128, 0.425);
-    border-radius: 5px;
-}
-
-.card__left > .id-absolute > span{
-    font-weight: bold;
+    width: 50%;
+    border-right: solid 1px #000;
 }
 
 .card__left > img {
-    width: 200px;
-    height: 200px;
-    padding: 5px
+    width: 90px;
+    height: 90px;
+    padding: 5px;
+    border-radius: 50%;
 }
+.card__capa{
+    width: 95%;
+    height: 358px;
+    top: 50px;
+    border-radius: 5px;
 
+    display: flex;
+    flex-direction: row;
+    min-width: 270px;
+    margin-bottom: 40px;
+    background-color: #073d66;
+
+    transition: transform .8s;
+}
+.card__left__capa > img {
+  padding: 5px;
+  width: 100%;
+}
+.card__left__capa {
+  display: flex;
+  width: 40%;
+}
+.card__right__capa {
+  display: flex;
+  margin: 20px;
+  width: 70%;
+}
+div.card__right__capa > .informacoes > .pix{
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+div.card__right__capa > .informacoes > .pix > .nome__capa{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  width: 300px;
+  height: 20px;
+  border-top: solid 1px #000;
+}
+div.card__right__capa > .informacoes > .pix > .mini-pix{
+  display: flex;
+  margin: auto;
+  margin-left: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+div.card__right__capa > .informacoes > .pix > .mini-pix > img {
+  width: 100px;
+  height: 100px;
+}
 .informacoes{
     display: flex;
     flex-direction: column;
-    width: 155px;
+    padding: 5px;
+}
+
+.card__right {
+  display: flex;
+  width: 50%;
+}
+
+.card__right > img {
+  width: 90px;
+  height: 90px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.card__right > .informacoes > .pix > img {
+position: absolute;
+right: 60px;
+bottom: 60px;
+justify-content: right;
+width: 110px;
+height: 110px;
+}
+
+.informacoes{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
 }
 @media (max-width: 510px){
     .card{
@@ -395,5 +486,4 @@ footer{
     .icon-delete, .icon-detalhar, .icon-edit{
       width: 40px;
     }
-}
-
+  }
